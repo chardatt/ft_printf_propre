@@ -6,13 +6,13 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:12:03 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:12:09 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:22:24 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_join(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*arr;
 	size_t	len1;

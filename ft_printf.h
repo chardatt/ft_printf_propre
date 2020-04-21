@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:13:37 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:13:38 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:23:22 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_struc			*ft_fill_struc(va_list arg_ptr, t_struc *struc,
 int				ft_count_nb(intmax_t nb, int base);
 char			*ft_itoa_intmax(intmax_t nb, int base, t_struc *struc);
 char			*ft_itoa_uintmax(uintmax_t nb, int base, char type);
-char			*ft_join(char *s1, char *s2);
+char			*ft_strjoin(char *s1, char *s2);
 int				ft_is_needle(char *str, char c);
 int				ft_check_flag(char *format, t_struc *struc, int i);
 int				ft_check_width(char *format, va_list arg_ptr, t_struc *struc,
