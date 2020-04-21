@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:10:06 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:10:07 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:41:22 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_compress(t_struc *struc, t_res *res)
 {
 	if (struc->flag[1] != '0' && struc->before_str != NULL)
 	{
-		res->arr = ft_join(res->arr, struc->before_str);
+		res->arr = ft_strjoin(res->arr, struc->before_str);
 		res->count += ft_strlen(struc->before_str);
 	}
 	if (struc->str && ft_is_needle("dDi", struc->type) == 1)
@@ -30,7 +30,7 @@ static void	ft_compress(t_struc *struc, t_res *res)
 			ft_strdel(&struc->str);
 			struc->str = ft_strdup("\0");
 		}
-		res->arr = ft_join(res->arr, "0x");
+		res->arr = ft_strjoin(res->arr, "0x");
 		res->count += 2;
 	}
 	ft_prec_digit(struc, res);

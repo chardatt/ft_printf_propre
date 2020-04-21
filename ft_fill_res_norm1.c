@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:10:25 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:10:26 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:44:08 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ t_res	*ft_1_if_str_null(t_struc *struc, t_res *res)
 	while (i < (int)ft_strlen(struc->before_str) - struc->prec)
 	{
 		tmp = ft_strsub(struc->before_str, i, 1);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		i++;
 	}
 	while (struc->width - i - j > 0)
 	{
 		tmp = ft_strsub(str, j, 1);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		j++;
 	}
@@ -54,14 +54,14 @@ t_res	*ft_2_if_str_null(t_struc *struc, t_res *res)
 	while (i < struc->prec)
 	{
 		tmp = ft_strsub(str, i, 1);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		i++;
 	}
 	while (struc->width - i - j > 0)
 	{
 		tmp = ft_strsub(struc->after_str, i, 1);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		j++;
 	}
@@ -89,7 +89,7 @@ int		ft_if_str_null(t_struc *struc, t_res *res)
 		res = ft_2_if_str_null(struc, res);
 	else
 	{
-		res->arr = ft_join(res->arr, str);
+		res->arr = ft_strjoin(res->arr, str);
 		res->count += 6;
 	}
 	ft_strdel(&str);
@@ -101,7 +101,7 @@ t_res	*ft_hash_ox(t_struc *struc, t_res *res)
 	if ((struc->type == 'o' || struc->type == 'O') && struc->flag[0] == '#'
 		&& struc->str[0] != '0')
 	{
-		res->arr = ft_join(res->arr, "0");
+		res->arr = ft_strjoin(res->arr, "0");
 		res->count++;
 		struc->len++;
 	}
@@ -111,8 +111,8 @@ t_res	*ft_hash_ox(t_struc *struc, t_res *res)
 		{
 			if (struc->str[0] != '\0' && struc->str[0] != '0')
 			{
-				res->arr = struc->type == 'x' ? ft_join(res->arr, "0x") :
-				ft_join(res->arr, "0X");
+				res->arr = struc->type == 'x' ? ft_strjoin(res->arr, "0x") :
+				ft_strjoin(res->arr, "0X");
 				res->count += 2;
 			}
 		}
@@ -134,7 +134,7 @@ t_res	*ft_prec_ws_wc(t_struc *struc, t_res *res)
 		while (count > 0 && *struc->w_str)
 		{
 			tmp = ft_print_wchar(*struc->w_str, 0, 0);
-			res->arr = ft_join(res->arr, tmp);
+			res->arr = ft_strjoin(res->arr, tmp);
 			count = count - ft_size_of_unicode(*struc->w_str);
 			struc->w_str++;
 		}
@@ -142,7 +142,7 @@ t_res	*ft_prec_ws_wc(t_struc *struc, t_res *res)
 	else
 	{
 		tmp = ft_strsub((char *)struc->w_str, 0, struc->prec);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		res->count += struc->prec;
 	}
 	ft_strdel(&tmp);

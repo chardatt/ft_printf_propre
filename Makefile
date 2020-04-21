@@ -6,7 +6,7 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/21 20:08:58 by tchardat          #+#    #+#              #
-#    Updated: 2020/04/21 20:08:59 by tchardat         ###   ########.fr        #
+#    Updated: 2020/04/21 20:47:03 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ ft_fill_res_digit.c\
 ft_fill_res_wstr.c\
 ft_fill_struc.c\
 ft_itoa_max.c\
-ft_join.c\
+ft_strjoin.c\
 ft_needle_flag_width.c\
 ft_prec_size.c\
 ft_print_result.c\

@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:10:35 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:10:36 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:44:58 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_prec_sc(t_struc *struc, t_res *res)
 		ft_is_needle("sc", struc->type) == 1)
 	{
 		tmp = ft_strsub(struc->str, 0, struc->prec);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		res->count += struc->prec;
 	}
@@ -28,7 +28,7 @@ void	ft_prec_sc(t_struc *struc, t_res *res)
 	{
 		if (struc->str)
 		{
-			res->arr = ft_join(res->arr, struc->str);
+			res->arr = ft_strjoin(res->arr, struc->str);
 			res->count += ft_strlen(struc->str);
 		}
 	}
@@ -38,14 +38,14 @@ void	ft_prec_digit(t_struc *struc, t_res *res)
 {
 	if (struc->flag[1] == '0' && struc->before_str != NULL)
 	{
-		res->arr = ft_join(res->arr, struc->before_str);
+		res->arr = ft_strjoin(res->arr, struc->before_str);
 		res->count += ft_strlen(struc->before_str);
 	}
 	if (struc->len < struc->prec && ft_is_needle("dDioOuUxXp", struc->type))
 	{
 		while (struc->len < struc->prec)
 		{
-			res->arr = ft_join(res->arr, "0");
+			res->arr = ft_strjoin(res->arr, "0");
 			res->count++;
 			struc->len++;
 		}
@@ -56,7 +56,7 @@ void	ft_after_str(t_struc *struc, t_res *res)
 {
 	if (struc->after_str)
 	{
-		res->arr = ft_join(res->arr, struc->after_str);
+		res->arr = ft_strjoin(res->arr, struc->after_str);
 		res->count += ft_strlen(struc->after_str);
 	}
 }

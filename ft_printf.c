@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 20:13:25 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/21 20:13:27 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/04/21 20:47:40 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_second_norm(const char *format, int i, t_res *res)
 	while (format[i] != '%' && format[i] && res->count != -1)
 	{
 		tmp = ft_strsub(format, i, 1);
-		res->arr = ft_join(res->arr, tmp);
+		res->arr = ft_strjoin(res->arr, tmp);
 		ft_strdel(&tmp);
 		res->count++;
 		i++;
